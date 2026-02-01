@@ -5,28 +5,54 @@
 <title>До нашей встречи</title>
 </head>
 
-<div class="hearts"></div>
+<div class="heart-container">
+  <span>❤️</span>
+  <span>💖</span>
+  <span>💕</span>
+  <span>💗</span>
+  <span>💘</span>
+  <span>❤️</span>
+  <span>💖</span>
+  <span>💕</span>
+</div>
 
 <style>
-.hearts::before,
-.hearts::after {
-content: "❤️ 💖 💕 💗 💘";
-position: fixed;
-top: -10%;
-left: 0;
-width: 150%;
-font-size: 50px;
-animation: fall 15s linear infinite;
-opacity: 0.5;
+.heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.hearts::after {
-animation-delay: 7s;
+.heart-container span {
+  position: absolute;
+  top: -10%;
+  font-size: 20px;
+  animation: fall linear infinite;
+  opacity: 0.7;
 }
+
+/* индивидуальные настройки */
+.heart-container span:nth-child(1) { left: 5%;  animation-duration: 14s; font-size: 18px; }
+.heart-container span:nth-child(2) { left: 15%; animation-duration: 18s; font-size: 22px; }
+.heart-container span:nth-child(3) { left: 30%; animation-duration: 16s; font-size: 20px; }
+.heart-container span:nth-child(4) { left: 45%; animation-duration: 20s; font-size: 26px; }
+.heart-container span:nth-child(5) { left: 60%; animation-duration: 17s; font-size: 21px; }
+.heart-container span:nth-child(6) { left: 75%; animation-duration: 19s; font-size: 24px; }
+.heart-container span:nth-child(7) { left: 85%; animation-duration: 15s; font-size: 19px; }
+.heart-container span:nth-child(8) { left: 95%; animation-duration: 22s; font-size: 27px; }
 
 @keyframes fall {
-0% { transform: translateY(0); }
-100% { transform: translateY(120vh); }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+  }
 }
 </style>
     
